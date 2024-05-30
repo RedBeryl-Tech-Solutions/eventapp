@@ -1,0 +1,69 @@
+{
+  "annotations": {
+    "changelogDate": "20240530052052"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "subscriptionName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "subscriptionAmount",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "taxAmount",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "totalAmount",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "subscriptionStartDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "subscriptionExpiryDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "additionalComments",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "notificationBeforeExpiry",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "notificationMuteFlag",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "notificationTo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "notificationCc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "notificationBcc",
+      "fieldType": "String"
+    }
+  ],
+  "name": "SubscriptionDetails",
+  "relationships": [],
+  "searchEngine": "no"
+}

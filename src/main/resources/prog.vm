@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subscription Expiry Notification</title>
+<style>
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+</style>
+</head>
+<body>
+<p>Hello Team,<br> <br>Greetings of the day<br><br>This is to inform you about the expiry of below subscription.</p>
+<h2>Subscription Expiry Notification</h2>
+
+<table>
+  <tr>
+    <th>Subscription Name</th>
+    <th>Expiry Date</th>
+    <th>Remarks</th>
+  </tr>
+  <list subscriptions as subscription>
+  <tr>
+    <td>${name}</td>
+    <td>${expiryDate}</td>
+    <td>${remarks}</td>
+  </tr>
+  </list>
+</table>
+
+<p>Please do the needful to avoid the impact of the same.</p>
+
+<p>Regards,<br>RedBeryl Tech Solutions Pvt Ltd.</p>
+
+</body>
+</html>
