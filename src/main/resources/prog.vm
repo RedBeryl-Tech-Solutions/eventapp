@@ -30,13 +30,11 @@ th {
     <th>Expiry Date</th>
     <th>Remarks</th>
   </tr>
-  <list subscriptions as subscription>
   <tr>
-    <td>${name}</td>
-    <td>${expiryDate}</td>
-    <td>${remarks}</td>
+    <td>$name</td>
+    <td>$expiryDate</td>
+    <td>$remarks</td>
   </tr>
-  </list>
 </table>
 
 <p>Please do the needful to avoid the impact of the same.</p>

@@ -50,10 +50,10 @@ public class NotificationService {
         sendEmail(from, to, cc, bcc, subject, message);
     }*/
 
-    @Scheduled(cron = "0 32 15 * * * ") // Executes at 10 PM every day
+    @Scheduled(cron = "0 36 14 * * * ") // Executes at 10 PM every day
     public void sendScheduledEmail() throws Exception {
         List<SubscriptionDetails> subscriptionDetailsList = getExpiringSubscriptions();
-        for(SubscriptionDetails subscriptionDetails:subscriptionDetailsList) {
+        for (SubscriptionDetails subscriptionDetails : subscriptionDetailsList) {
             String from = "hr@redberyltech.com";
             String to = subscriptionDetails.getNotificationTo();
             String cc = subscriptionDetails.getNotificationCc();
@@ -68,7 +68,7 @@ public class NotificationService {
         }
     }
 
-    public boolean sendEmail(String from,String to, String cc, String bcc, String subject, String message) {
+    public boolean sendEmail(String from, String to, String cc, String bcc, String subject, String message) {
         {
             boolean f = false;
             Properties properties = new Properties();
@@ -94,15 +94,16 @@ public class NotificationService {
                 mimeMessage.setFrom("prathamesh.kadam@redberyltech.com");
                 String[] toAddresses = to.split(",");
                 for (String address : toAddresses) {
-                   // mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+                    // mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
                     mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(address.trim()));
                 }
+
                 if (cc != null && !cc.isEmpty()) {
-                    mimeMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(cc));
+                    mimeMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(cc.trim()));
                 }
                 // Adding BCC recipients if provided
                 if (bcc != null && !bcc.isEmpty()) {
-                    mimeMessage.addRecipient(Message.RecipientType.BCC, new InternetAddress(bcc));
+                    mimeMessage.addRecipient(Message.RecipientType.BCC, new InternetAddress(bcc.trim()));
                 }
 
                 mimeMessage.setSubject(subject);
@@ -111,7 +112,6 @@ public class NotificationService {
                 mimeMessage.setContent(message, "text/html");
                 Transport.send(mimeMessage);
                 f = true;
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -119,6 +119,7 @@ public class NotificationService {
         }
     }
 }
+
 
 
 
